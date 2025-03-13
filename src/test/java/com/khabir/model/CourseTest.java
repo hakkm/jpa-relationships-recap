@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.khabir.EnvLoader;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -17,7 +19,7 @@ public class CourseTest {
 
   @BeforeEach
   public void setUp() {
-    emf = Persistence.createEntityManagerFactory("defaultPU");
+    emf = Persistence.createEntityManagerFactory("defaultPU", EnvLoader.getPersistenceProperties());
     em = emf.createEntityManager();
 
   }

@@ -19,8 +19,7 @@ public class StudentTest {
 
   @BeforeEach
   public void setUp() {
-    EnvLoader.loadEnvVars();
-    emf = Persistence.createEntityManagerFactory("defaultPU");
+    emf = Persistence.createEntityManagerFactory("defaultPU", EnvLoader.getPersistenceProperties());
     em = emf.createEntityManager();
   }
 

@@ -8,8 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.khabir.EnvLoader;
-import com.khabir.model.onetoone.uni.Course;
-import com.khabir.model.onetoone.uni.Student;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -26,7 +24,7 @@ public class OneToOneUniTest {
 
   @BeforeEach
   public void setUp() {
-    emf = Persistence.createEntityManagerFactory("defaultPUOneToOneUni");
+    emf = Persistence.createEntityManagerFactory("defaultPUOneToOneUni", EnvLoader.getPersistenceProperties());
     em = emf.createEntityManager();
   }
 

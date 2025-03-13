@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.khabir.EnvLoader;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -29,7 +31,7 @@ public class ManyToManyBiTest {
 
   @BeforeEach
   public void setUp() {
-    emf = Persistence.createEntityManagerFactory("defaultPUManyToManyBi");
+    emf = Persistence.createEntityManagerFactory("defaultPUManyToManyBi", EnvLoader.getPersistenceProperties());
     em = emf.createEntityManager();
 
     student1.setCourses(List.of(course1, course2));

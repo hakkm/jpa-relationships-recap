@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.khabir.EnvLoader;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -28,7 +30,7 @@ public class OneToManyUniTest {
 
   @BeforeEach
   public void setUp() {
-    emf = Persistence.createEntityManagerFactory("defaultPUOneToManyUni");
+    emf = Persistence.createEntityManagerFactory("defaultPUOneToManyUni", EnvLoader.getPersistenceProperties());
     em = emf.createEntityManager();
 
     student.setCourses(List.of(course1, course2));

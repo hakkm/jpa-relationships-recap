@@ -7,9 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.khabir.EnvLoader;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -30,7 +31,7 @@ public class OneToManyBiTest {
 
   @BeforeEach
   public void setUp() {
-    emf = Persistence.createEntityManagerFactory("defaultPUOneToManyBi");
+    emf = Persistence.createEntityManagerFactory("defaultPUOneToManyBi", EnvLoader.getPersistenceProperties());
     em = emf.createEntityManager();
 
     student.setCourses(List.of(course1, course2));
