@@ -55,5 +55,21 @@ This test class demonstrates the many-to-many bi-directional relationship betwee
 
 - JPA (Jakarta Persistence API)
 - EclipseLink (JPA implementation)
-- PostgreSQL (database)
+- PostgreSQL (database) or any other database
 - JUnit 5 (testing framework)
+
+## Database Configuration
+
+You need to fill in the db.properties file located in the resources directory with your database connection details. Here is an example:
+```properties
+DB_URL=jdbc:postgresql://localhost:5432/schooldb
+DB_USER=yourusername
+DB_PASSWORD=yourpassword
+DB_DRIVER=org.postgresql.Driver
+```
+
+You can change the database to whatever you want by modifying the db.properties file. But, for this project, I used PostgreSQL. You can use MySQL, Oracle, or any other database by changing the driver and connection URL in the db.properties file. But, you need to add the corresponding database dependency in the pom.xml file.
+
+## Getting Started
+
+Move to the relationship test directory and run the test classes to see the results.
