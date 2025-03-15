@@ -1,4 +1,4 @@
-package com.khabir.model.inheritance.singletable;
+package com.khabir.model.inheritance.tableperclass;
 
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,18 +13,19 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class SingleTableInheritance {
+public class TablePerClassInheritance {
   /*
-   * Tests Single Table Inheritance
-   * Just one table for all classes
-   * Person(id, person_type, name, grade, salary)
+   * Tests Table Per Class Inheritance
+   * Separate tables for each class
+   * Person(id, name), Student(id, grade), Teacher(id, salary)
+   * Person table is created but not used (empty), unless you persist a Person object
    */
   private EntityManagerFactory emf;
   private EntityManager em;
 
   @BeforeEach
   public void setUp() {
-    emf = Persistence.createEntityManagerFactory("defaultPUSingleTableInheritance",
+    emf = Persistence.createEntityManagerFactory("defaultPUTablePerClassInheritance",
         EnvLoader.getPersistenceProperties());
     em = emf.createEntityManager();
   }

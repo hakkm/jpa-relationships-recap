@@ -87,4 +87,16 @@
             <property name="eclipselink.ddl-generation.output-mode" value="database"/>
         </properties>
     </persistence-unit>
+
+    <persistence-unit name="defaultPUTablePerClassInheritance" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.khabir.model.inheritance.tableperclass.Student</class>
+        <class>com.khabir.model.inheritance.tableperclass.Person</class>
+        <class>com.khabir.model.inheritance.tableperclass.Teacher</class>
+
+        <properties>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+        </properties>
+    </persistence-unit>
 </persistence>

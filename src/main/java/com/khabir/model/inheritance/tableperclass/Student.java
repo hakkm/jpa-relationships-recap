@@ -1,10 +1,8 @@
-package com.khabir.model.inheritance.joinedtable;
+package com.khabir.model.inheritance.tableperclass;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-@PrimaryKeyJoinColumn(referencedColumnName = "id")
 public class Student extends Person {
     private int grade;
 

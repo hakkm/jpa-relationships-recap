@@ -1,4 +1,4 @@
-package com.khabir.model.inheritance.joinedtable;
+package com.khabir.model.inheritance.tableperclass;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
